@@ -1,1 +1,90 @@
-@import '~bootstrap/scss/bootstrap'
+@import '~bootstrap/scss/bootstrap';
+
+body{
+    background-color: black;
+}
+//HOME
+#home_main {
+    color: white;
+
+    a {
+        color: red;
+        text-decoration: none;
+        font-size: 3rem;
+    }
+    .scroll-wrap {
+        height: 300px ;
+        position: relative;
+        overflow: hidden;
+
+        h2 {
+            font-size: 4rem;
+            text-transform: uppercase;
+            position: absolute;
+            top: 2rem;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        h3 {
+            font-size: 3rem;
+            position: absolute;
+            top: 7rem;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        h4 {
+            font-size: 5rem;
+            position: absolute;
+            top: 12rem;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}
+
+//INDEX
+#proj_list {
+
+    h4 {
+        color: white;
+    }
+    button {
+        border: 2px solid white;
+        padding: 0.3rem 1.6rem;
+        border-radius: 15px;
+        margin-top: 1rem;
+        background-color: black;
+        a {
+            text-decoration: none;
+            display: block;
+            color: white;
+        }
+    }
+}
+
+#proj_page {
+    div.col-8 {
+        border-left: 1px solid white;
+    }
+    h2 {
+        color: white;
+        margin-bottom: 2rem;
+        font-size: 3rem;
+    }
+    p {
+        color: white;
+        font-size: 1.4rem;
+    }
+        button {
+            background-color: black;
+            border: 2px solid white;
+            padding: 0.3rem 1.6rem;
+            border-radius: 15px;
+            color: white;
+            a {
+                text-decoration: none;
+                color: white;
+            }
+        }
+}
+
