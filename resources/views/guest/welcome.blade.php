@@ -45,6 +45,5 @@
                 doloremque incidunt voluptatem doloribus vel ducimus officia possimus mollitia velit nostrum facilis
                 dolores.</p>
         </div>
-        <a class="d-block text-center" href="{{ route('admin.projects.index') }}">View my Projects</a>
     </section>
 @endsection

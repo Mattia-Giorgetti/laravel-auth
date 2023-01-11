@@ -8,7 +8,7 @@ body{
     color: white;
 
     a {
-        color: red;
+        color: orange;
         text-decoration: none;
         font-size: 3rem;
     }
@@ -44,15 +44,21 @@ body{
 
 //INDEX
 #proj_list {
-
+    .col-12 {
+        border-bottom: 2px solid white;
+        padding-bottom: 1rem;
+    }
     h4 {
         color: white;
+        margin-bottom: 0;
+    }
+    span {
+        color:orange;
     }
     button {
         border: 2px solid white;
         padding: 0.3rem 1.6rem;
         border-radius: 15px;
-        margin-top: 1rem;
         background-color: black;
         a {
             text-decoration: none;
@@ -86,5 +92,25 @@ body{
                 color: white;
             }
         }
+}
+// CREATE
+
+form {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    gap: 1rem;
+
+    .form_btn {
+        width: 100px;
+        display: block;
+        margin: auto;
+        margin-top: 2rem;
+        background-color: black;
+        color: white;
+        border: 2px solid white;
+        border-radius: 15px;
+        padding: 0.3rem 1.6rem
+    }
 }
 
