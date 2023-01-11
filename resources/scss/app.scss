@@ -3,6 +3,10 @@
 body{
     background-color: black;
 }
+.active_li {
+    color: orange;
+    font-weight: bold;
+}
 //HOME
 #home_main {
     color: white;
@@ -118,28 +122,48 @@ body{
 
 }
 // CREATE
-
-form {
-    display: flex;
-    flex-direction: column;
-    color: white;
-    gap: 1rem;
-
-    .form_btn {
-        width: 100px;
-        display: block;
-        margin: auto;
-        margin-top: 2rem;
-        background-color: black;
+#create_form {
+    form {
+        display: flex;
+        flex-direction: column;
         color: white;
-        border: 2px solid white;
-        border-radius: 15px;
-        padding: 0.3rem 1.6rem;
-        transition: all 0.3s;
-        &:hover{
-            color: orange;
-            border-color: orange;
+        gap: 1rem;
+
+        .form_btn {
+            width: 100px;
+            display: block;
+            margin: auto;
+            margin-top: 2rem;
+            background-color: black;
+            color: white;
+            border: 2px solid white;
+            border-radius: 15px;
+            padding: 0.3rem 1.6rem;
+            transition: all 0.3s;
+            &:hover{
+                color: orange;
+                border-color: orange;
+            }
         }
     }
 }
+
+
+// GUEST INDEX {
+    #guest_index {
+        h1 {
+            color: orange;
+        }
+        .img-wrap{
+            height: 155px ;
+            overflow: hidden;
+        }
+        .card-text {
+            height: 140px;
+        }
+        .list-group-item {
+            color: orange;
+        }
+    }
+
 

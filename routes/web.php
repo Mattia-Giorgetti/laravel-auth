@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\DashBoardController;
+use App\Http\Controllers\Guest\NavigationController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('guest.welcome');
 });
+Route::get('guest.projects', [NavigationController::class, 'index'])->name('guestindex');
 
 Route::middleware(['auth', 'verified'])->name('admin.')->prefix('admin')
     ->group(function () {
