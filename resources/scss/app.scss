@@ -60,10 +60,18 @@ body{
         padding: 0.3rem 1.6rem;
         border-radius: 15px;
         background-color: black;
+        transition: all 0.3s ;
         a {
             text-decoration: none;
             display: block;
             color: white;
+            transition: all 0.3s;
+            &:hover {
+                color: orange;
+            }
+        }
+        &:hover {
+            border-color:  orange;
         }
     }
 }
@@ -80,7 +88,21 @@ body{
     p {
         color: white;
         font-size: 1.4rem;
+        span {
+            color: orange;
+        }
     }
+    .gh_link {
+        text-decoration: none;
+        color: orange;
+        font-size: 1rem;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    .btn_section {
+
         button {
             background-color: black;
             border: 2px solid white;
@@ -92,6 +114,8 @@ body{
                 color: white;
             }
         }
+    }
+
 }
 // CREATE
 
@@ -110,7 +134,12 @@ form {
         color: white;
         border: 2px solid white;
         border-radius: 15px;
-        padding: 0.3rem 1.6rem
+        padding: 0.3rem 1.6rem;
+        transition: all 0.3s;
+        &:hover{
+            color: orange;
+            border-color: orange;
+        }
     }
 }
 

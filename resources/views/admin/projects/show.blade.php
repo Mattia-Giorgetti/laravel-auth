@@ -10,8 +10,8 @@
             @endif
             <h2>{{ $project->title }}</h2>
             <p>{{ $project->proj_description }}</p>
-            <p>{{ $project->code_lang }}</p>
-            <p>{{ $project->github_link }}</p>
+            <p>Languages: <span>{{ $project->code_lang }}</span></p>
+            <a class="gh_link" href="{{ $project->github_link }}" target="_blank">{{ $project->github_link }}</a>
             <img class="d-block mt-5" width="600px" src="{{ asset('storage/' . $project->cover_image) }}" alt="">
             <div class="btn_section d-flex gap-4 pt-5">
                 <button>

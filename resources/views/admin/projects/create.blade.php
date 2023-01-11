@@ -17,10 +17,7 @@
                 @csrf
 
                 <label for="title" class="form-label">Title</label>
-                <input type="text" name="title" id="title" class="form-control @error('title') is invalid @enderror">
-                @error('title')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                @enderror
+                <input type="text" name="title" id="title">
                 <label for="proj_description">Description</label>
                 <input type="text" name="proj_description" id="proj_description" required>
                 <label for="code_lang">Used Linguages</label>
@@ -28,7 +25,7 @@
                 <label for="github_link">GitHub Link</label>
                 <input type="text" name="github_link" id="github_link" required>
                 <label for="cover_image">Image</label>
-                <input type="file" name="cover_image" id="cover_image" required>
+                <input type="file" name="cover_image" id="cover_image">
 
 
 
