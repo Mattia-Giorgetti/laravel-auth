@@ -28,7 +28,8 @@ class StoreProjectRequest extends FormRequest
             'proj_description' => 'nullable|max:300',
             'code_lang' => 'nullable|max:100',
             'github_link' => 'nullable',
-            'cover_image' => 'required|image|max:1000'
+            'cover_image' => 'required|image|max:1000',
+            'type_id' => 'nullable|exists:types,id'
         ];
     }
     public function messages()

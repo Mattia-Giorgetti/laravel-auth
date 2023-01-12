@@ -26,6 +26,15 @@
                 <input type="text" name="github_link" id="github_link" required>
                 <label for="cover_image">Image</label>
                 <input type="file" name="cover_image" id="cover_image">
+                <label for="type_id">Seleziona Type</label>
+                <select name="type_id" id="type_id">
+                    <option value="">Select Type</option>
+                    @foreach ($types as $type)
+                        <option value="{{ $type->id }}" {{ $type->id == old('type_id') ? 'selected' : '' }}>
+                            {{ $type->name }}</option>
+                    @endforeach
+                </select>
+
 
 
 

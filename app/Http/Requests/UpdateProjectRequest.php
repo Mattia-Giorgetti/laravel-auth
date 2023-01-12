@@ -28,7 +28,8 @@ class UpdateProjectRequest extends FormRequest
             'title' => ['required', Rule::unique('projects')->ignore($this->project)],
             'proj_description' => ['nullable', 'max:300'],
             'code_lang' => ['nullable', 'max:100'],
-            'cover_image' => ['required', 'image', 'max:1000']
+            'cover_image' => ['image', 'max:1000'],
+            'type_id' => ['nullable', 'exists:types,id']
         ];
     }
     public function messages()
@@ -40,7 +41,6 @@ class UpdateProjectRequest extends FormRequest
             'title.unique:projects' => 'Questo titolo esiste già',
             'proj_description.max' => "La descrizione può essere massimo di :max caratteri",
             'code_lang.max' => 'Questo campo non può contenere più di :max caratteri',
-            'cover_image.required' => "L'immagine è obbligatoria!",
             'cover_image.max' => "L'immagine è troppo grande!"
         ];
     }

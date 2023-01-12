@@ -11,6 +11,10 @@
             <h2>{{ $project->title }}</h2>
             <p>{{ $project->proj_description }}</p>
             <p>Languages: <span>{{ $project->code_lang }}</span></p>
+            @if ($project->type)
+                <p>Type: <span>{{ $project->type->name }}</span></p>
+            @endif
+
             <a class="gh_link" href="{{ $project->github_link }}" target="_blank">{{ $project->github_link }}</a>
             <img class="d-block mt-5" width="600px" src="{{ asset('storage/' . $project->cover_image) }}" alt="">
             <div class="btn_section d-flex gap-4 pt-5">
