@@ -9,7 +9,6 @@
                 </div>
             @endif
             <h2>{{ $type->name }}</h2>
-
             <h3 class="text-white">Projects involved:</h3>
             <ul class="list-unstyled">
                 @foreach ($type->projects as $project)

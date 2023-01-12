@@ -9,6 +9,7 @@ use App\Http\Requests\UpdateProjectRequest;
 use App\Models\Project;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Type;
+use Illuminate\Support\Facades\Auth;
 
 class ProjectController extends Controller
 {
@@ -19,7 +20,13 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = Project::all();
+        if (Auth::user()->isadmin()) {
+            $projects = Project::all();
+        } else {
+            $userID = Auth::id();
+            $projects = Project::where('user_id', $userID)->get();
+        }
+
         return view('admin.projects.index', compact('projects'));
     }
 
@@ -30,6 +37,7 @@ class ProjectController extends Controller
      */
     public function create()
     {
+
         $types = Type::all();
         return view('admin.projects.create', compact('types'));
     }
@@ -41,18 +49,16 @@ class ProjectController extends Controller
      */
     public function store(StoreProjectRequest $request)
     {
+        $userID = Auth::id();
         $data = $request->validated();
         $slug = Project::generateSlug($request->title);
         $data['slug'] = $slug;
-
+        $data['user_id'] = $userID;
         //IMMAGINI
         if ($request->hasFile('cover_image')) {
             $path = Storage::disk('public')->put('project_images', $request->cover_image);
             $data['cover_image'] = $path;
         }
-
-
-
         $newProject = Project::create($data);
         return redirect()->route('admin.projects.show', $newProject->slug)->with('message', "New project created!");
     }
@@ -64,6 +70,9 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
+        if (!Auth::user()->isadmin() && $project->user_id !== Auth::id()) {
+            abort(403);
+        }
         return view('admin.projects.show', compact('project'));
     }
 
@@ -74,6 +83,9 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
+        if (!Auth::user()->isadmin() && $project->user_id !== Auth::id()) {
+            abort(403);
+        }
         $types = Type::all();
         return view('admin.projects.edit', compact('project', 'types'));
     }
@@ -85,6 +97,9 @@ class ProjectController extends Controller
      */
     public function update(UpdateProjectRequest $request, Project $project)
     {
+        if (!Auth::user()->isadmin() && $project->user_id !== Auth::id()) {
+            abort(403);
+        }
         $data = $request->validated();
         $slug = Project::generateSlug($request->title);
         $data['slug'] = $slug;
