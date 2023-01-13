@@ -10,6 +10,7 @@ use App\Models\Project;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Type;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Technology;
 
 class ProjectController extends Controller
 {
@@ -39,7 +40,10 @@ class ProjectController extends Controller
     {
 
         $types = Type::all();
-        return view('admin.projects.create', compact('types'));
+        $technologies = Technology::all();
+        return view('admin.projects.create', compact('types', 'technologies'));
+
+
     }
 
     /**
@@ -60,6 +64,11 @@ class ProjectController extends Controller
             $data['cover_image'] = $path;
         }
         $newProject = Project::create($data);
+
+
+        if ($request->has('technologies')) {
+            $newProject->technologies()->attach($request->technologies);
+        }
         return redirect()->route('admin.projects.show', $newProject->slug)->with('message', "New project created!");
     }
 
@@ -86,8 +95,10 @@ class ProjectController extends Controller
         if (!Auth::user()->isadmin() && $project->user_id !== Auth::id()) {
             abort(403);
         }
+        $technologies = Technology::all();
         $types = Type::all();
-        return view('admin.projects.edit', compact('project', 'types'));
+        return view('admin.projects.edit', compact('project', 'types', 'technologies'));
+
     }
 
     /**
@@ -112,6 +123,10 @@ class ProjectController extends Controller
         }
 
         $project->update($data);
+
+        if ($request->has('technologies')) {
+            $project->technologies()->sync($request->technologies);
+        }
 
         return redirect()->route('admin.projects.index')->with('message', "$project->title Updated!");
 

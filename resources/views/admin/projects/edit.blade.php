@@ -22,9 +22,6 @@
                 <label for="proj_description">Description</label>
                 <input type="text" name="proj_description" id="proj_description"
                     value="{{ old('proj_description', $project->proj_description) }}" required>
-                <label for="code_lang">Used Linguages</label>
-                <input type="text" name="code_lang" id="code_lang" value="{{ old('code_lang', $project->code_lang) }}"
-                    required>
                 <label for="github_link">GitHub Link</label>
                 <input type="text" name="github_link" id="github_link"
                     value="{{ old('github_link', $project->github_link) }}" required>
@@ -42,6 +39,24 @@
                     @endforeach
                 </select>
 
+                <label for="technologies">Technologies</label>
+                <select multiple class="form-select" name="technologies[]" id="technologies">
+                    @forelse ($technologies as $technology)
+                        @if ($errors->any())
+                            <option value="{{ $technology->id }}"
+                                {{ in_array($technology->id, old('technologies[]')) ? 'selected' : '' }}>
+                                {{ $technology->name }}
+                            </option>
+                        @else
+                            <option value="{{ $technology->id }}"
+                                {{ $project->technologies->contains($technology->id) ? 'selected' : '' }}>
+                                {{ $technology->name }}
+                            </option>
+                        @endif
+                    @empty
+                        <option value="">No technologies</option>
+                    @endforelse
+                </select>
 
 
                 <input class="form_btn" type="submit" value="Send">

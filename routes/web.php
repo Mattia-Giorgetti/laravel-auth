@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\DashBoardController;
 use App\Http\Controllers\Admin\TypeController;
 use App\Http\Controllers\Guest\NavigationController;
+use App\http\Controllers\Admin\TechnologyController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -28,6 +29,7 @@ Route::middleware(['auth', 'verified'])->name('admin.')->prefix('admin')
         Route::get('/', [DashBoardController::class, 'index'])->name('dashboard');
         Route::resource('projects', ProjectController::class)->parameters(['projects' => 'project:slug']);
         Route::resource('types', TypeController::class)->parameters(['types' => 'type:slug']);
+        Route::resource('technologies', TechnologyController::class)->parameters(['technologies' => 'technology:slug']);
     });
 // Route::get('/dashboard', function () {
 //     return view('dashboard');

@@ -20,8 +20,6 @@
                 <input type="text" name="title" id="title">
                 <label for="proj_description">Description</label>
                 <input type="text" name="proj_description" id="proj_description" required>
-                <label for="code_lang">Used Linguages</label>
-                <input type="text" name="code_lang" id="code_lang" required>
                 <label for="github_link">GitHub Link</label>
                 <input type="text" name="github_link" id="github_link" required>
                 <label for="cover_image">Image</label>
@@ -33,6 +31,18 @@
                         <option value="{{ $type->id }}" {{ $type->id == old('type_id') ? 'selected' : '' }}>
                             {{ $type->name }}</option>
                     @endforeach
+                </select>
+
+                <label for="technologies">Technologies</label>
+                <select multiple class="form-select" name="technologies[]" id="technologies">
+                    @forelse ($technologies as $technology)
+                        <option value="{{ $technology->id }}">
+                            {{ $technology->name }}
+                        </option>
+
+                    @empty
+                        <option value="">No Technologies</option>
+                    @endforelse
                 </select>
 
 

@@ -18,7 +18,10 @@
                                 </div>
                             </div>
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item">{{ $project->code_lang }}</li>
+                                <li class="list-group-item">{{ $project->type->name }}</li>
+                                @foreach ($project->technologies as $technology)
+                                    <li class="list-group-item">{{ $technology->name }}</li>
+                                @endforeach
                             </ul>
                             <div class="card-body">
                                 <a href="{{ $project->github_link }}" target="_blank" class="card-link">View on Git Hub</a>

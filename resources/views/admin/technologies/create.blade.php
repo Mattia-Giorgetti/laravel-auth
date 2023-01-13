@@ -13,12 +13,11 @@
                     </div>
                 @endif
             </div>
-            <form action="{{ route('admin.types.update', $type->slug) }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('admin.technologies.store') }}" method="POST">
                 @csrf
-                @method('PUT')
 
-                <label for="name">Name</label>
-                <input type="text" name="name" id="name" value="{{ old('name', $type->name) }}">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" name="name" id="name">
 
                 <input class="form_btn" type="submit" value="Send">
             </form>

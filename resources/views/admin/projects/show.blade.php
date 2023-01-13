@@ -10,9 +10,16 @@
             @endif
             <h2>{{ $project->title }}</h2>
             <p>{{ $project->proj_description }}</p>
-            <p>Languages: <span>{{ $project->code_lang }}</span></p>
             @if ($project->type)
                 <p>Type: <span>{{ $project->type->name }}</span></p>
+            @endif
+            @if ($project->technologies && count($project->technologies) > 0)
+                <span class="text-white fs-2">Technologies:</span>
+                <ul class="list-unstyled mb-5">
+                    @foreach ($project->technologies as $technology)
+                        <li class="text-white fs-4">{{ $technology->name }}</li>
+                    @endforeach
+                </ul>
             @endif
 
             <a class="gh_link" href="{{ $project->github_link }}" target="_blank">{{ $project->github_link }}</a>
