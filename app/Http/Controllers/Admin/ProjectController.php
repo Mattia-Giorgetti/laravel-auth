@@ -56,7 +56,7 @@ class ProjectController extends Controller
         $data['user_id'] = $userID;
         //IMMAGINI
         if ($request->hasFile('cover_image')) {
-            $path = Storage::disk('public')->put('project_images', $request->cover_image);
+            $path = Storage::put('project_images', $request->cover_image);
             $data['cover_image'] = $path;
         }
         $newProject = Project::create($data);
@@ -107,7 +107,7 @@ class ProjectController extends Controller
             if ($project->cover_image) {
                 Storage::delete($project->cover_image);
             }
-            $path = Storage::disk('public')->put('project_images', $request->cover_image);
+            $path = Storage::put('project_images', $request->cover_image);
             $data['cover_image'] = $path;
         }
 
@@ -124,6 +124,12 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
+        if (!Auth::user()->isadmin() && $project->user_id !== Auth::id()) {
+            abort(403);
+        }
+        if ($project->cover_image) {
+            Storage::delete($project->cover_image);
+        }
         $project->delete();
         return redirect()->route('admin.projects.index')->with('message', "$project->title has been deleted");
     }
