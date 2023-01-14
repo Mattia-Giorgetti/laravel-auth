@@ -31,7 +31,7 @@
                 </div>
                 <label for="cover_image">New Image</label>
                 <input type="file" name="cover_image" id="cover_image">
-                <select name="type_id" id="type_id">
+                <select name="type_id" id="type_id" class="my-5 w-25">
                     <option value="">Select Type</option>
                     @foreach ($types as $type)
                         <option value="{{ $type->id }}" {{ $type->id == old('type_id') ? 'selected' : '' }}>
@@ -39,7 +39,7 @@
                     @endforeach
                 </select>
 
-                <label for="technologies">Technologies</label>
+                {{-- <label for="technologies">Technologies</label>
                 <select multiple class="form-select" name="technologies[]" id="technologies">
                     @forelse ($technologies as $technology)
                         @if ($errors->any())
@@ -56,7 +56,24 @@
                     @empty
                         <option value="">No technologies</option>
                     @endforelse
-                </select>
+                </select> --}}
+                <p class="mb-0 fs-5">Select Technology:</p>
+                @foreach ($technologies as $technology)
+                    <div class="form-check ps-0">
+                        <label for="{{ $technology->slug }}">{{ $technology->name }}</label>
+                        @if (old('technologies'))
+                            <input type="checkbox" id="{{ $technology->slug }}" name="technologies[]"
+                                value="{{ $technology->id }}"
+                                {{ in_array($technology->id, old('technologies', [])) ? 'checked' : '' }}>
+                        @else
+                            <input type="checkbox" id="{{ $technology->slug }}" name="technologies[]"
+                                value="{{ $technology->id }}"
+                                {{ $project->technologies->contains($technology) ? 'checked' : '' }}>
+                        @endif
+
+                    </div>
+                @endforeach
+
 
 
                 <input class="form_btn" type="submit" value="Send">

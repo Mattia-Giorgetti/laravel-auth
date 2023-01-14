@@ -1,13 +1,22 @@
-@extends('layouts.app')
-@section('content')
+@extends('layouts.guest')
+@section('guest-content')
+    <section id="jumbo">
+        <div class="container h-100 d-flex align-items-center">
+            <div class="row h-100">
+                <div class="col-lg-6 col-md-4 col-sm-12 d-flex align-items-center">
+                    <h1 id="jumbo_h3">Hi! Welcome to my Portfolio. I'm a full stack developer.
+                    </h1>
+                </div>
+                <div class="col-lg-6 col-md-4 col-sm-12">
+
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
     <section id="home_main">
         <div class="container py-5">
-            <div class="scroll-wrap">
-                <h2 id="maintitle">Welcome</h2>
-                <h3 id="subtext">To</h3>
-                <h4 id="logopic">My Portfolio</h4>
-            </div>
-
 
             <p class="hidden">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil a nam eaque voluptatem
                 incidunt
@@ -31,19 +40,29 @@
                 dicta
                 enim, fugiat vitae.
             </p>
-            <p class="py-3 hidden">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium adipisci
-                possimus
-                ratione
-                non, culpa,
-                ipsam nesciunt, dolor dolores quaerat at corporis libero eligendi quod voluptatibus alias qui quisquam
-                maiores temporibus in vitae soluta eius! Amet alias est, porro similique assumenda nisi sapiente minus
-                distinctio cupiditate repudiandae eligendi. Autem, at nulla. Eum, deserunt ipsum laboriosam laudantium
-                iste
-                itaque debitis natus delectus quia iusto dolorem, nesciunt, nisi quae possimus praesentium. Laboriosam,
-                totam impedit ratione nesciunt repudiandae quis ea rem, doloremque voluptatum alias ut, dolorum quaerat.
-                Necessitatibus delectus, praesentium natus similique a dolore recusandae non rerum quidem dolor quas
-                doloremque incidunt voluptatem doloribus vel ducimus officia possimus mollitia velit nostrum facilis
-                dolores.</p>
+            <p class="py-3 hidden">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste quisquam quo exercitationem
+                magnam voluptates sint placeat harum repudiandae cupiditate quibusdam quasi minima neque sapiente, vitae
+                unde hic iure voluptatum. Totam, facilis! Consequuntur ipsa delectus labore non sequi tenetur possimus
+                quidem fugit, nam in magnam odio veniam officia quisquam, esse pariatur quaerat veritatis ut est! Dolore,
+                eum nobis aut aliquam sit eaque laudantium. Nobis explicabo molestias quidem neque et expedita obcaecati
+                architecto, perferendis eligendi quasi doloribus repellendus corporis temporibus fuga saepe, nisi ab
+                repudiandae deserunt facilis vero hic quo sit laborum velit. Earum voluptatibus iste asperiores doloribus
+                voluptatem voluptatum voluptates sint excepturi placeat molestiae doloremque, rem ipsam molestias non
+                repellendus temporibus dolorum culpa eos beatae. Ipsam laudantium magnam ipsum quos necessitatibus beatae
+                impedit iste repellendus, laborum itaque doloribus nulla natus ducimus obcaecati molestias porro iure
+                tempore! Culpa maxime quod voluptatibus facilis a adipisci asperiores alias beatae quia recusandae odit
+                exercitationem distinctio nihil, mollitia officia, atque, corrupti voluptas excepturi. Eius alias beatae,
+                itaque similique adipisci quo odit delectus numquam eos fuga unde nulla, odio sequi, inventore cum
+                perferendis? Illum cum facere sint soluta delectus, et tempora! Sint rem fuga itaque neque numquam ipsam
+                suscipit, cumque molestias enim repellat, accusantium perspiciatis alias nobis! Dolores totam ipsa
+                exercitationem, facere autem id cum sunt excepturi dolor praesentium deserunt aliquid omnis ullam soluta
+                neque, nostrum eaque nisi consectetur libero doloribus adipisci? Quisquam quaerat enim ad, accusamus
+                dignissimos, eos, repellendus beatae non doloribus atque debitis necessitatibus? Delectus eos iste quidem,
+                numquam beatae atque non aperiam libero maxime, aut expedita magnam dolor, sint suscipit dolore. Saepe quo
+                doloribus vel, suscipit, incidunt veniam ut nesciunt repudiandae iste cupiditate totam possimus, ipsam
+                pariatur impedit porro dolore dolorem. Sapiente provident odio fugit commodi officia cum rerum temporibus,
+                dolorum fugiat adipisci. Molestiae minus cupiditate sapiente iure voluptates dicta explicabo exercitationem
+                totam vel?</p>
         </div>
     </section>
 @endsection

@@ -1,5 +1,5 @@
-@extends('layouts.app')
-@section('content')
+@extends('layouts.guest')
+@section('guest-content')
     <section id="guest_index">
         <div class="container py-4">
             <h1 class="text-center py-5">These Are My Current Projects</h1>

@@ -9,7 +9,12 @@
                 </div>
             @endif
             <h2>{{ $type->name }}</h2>
-            <h3 class="text-white mb-4">Projects involved:</h3>
+            @if (count($type->projects) > 0)
+                <h3 class="text-white mb-4">Projects involved:</h3>
+            @else
+                <h3 class="text-white">Oops... no {{ $type->name }} projects here</h3>
+            @endif
+
             <ul class="list-unstyled">
                 @foreach ($type->projects as $project)
                     <li class="text-white py-2">

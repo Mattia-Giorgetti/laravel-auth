@@ -19,12 +19,12 @@
     @vite(['resources/js/app.js'])
 </head>
 
-<body>
+<body class="bg-black">
     @include('partials.header')
+
     <main>
         @yield('content')
     </main>
-    </div>
 </body>
 
 </html>

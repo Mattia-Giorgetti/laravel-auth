@@ -1,49 +1,34 @@
 @import '~bootstrap/scss/bootstrap';
-
-body{
-    background-color: black;
+body {
+    font-family: 'Montserrat', sans-serif;
 }
+
+
 .active_li {
-    color: orange;
+    color: #007194;
     font-weight: bold;
 }
 //HOME
 #home_main {
-    color: white;
+    color: black;
 
     a {
         color: orange;
         text-decoration: none;
         font-size: 3rem;
     }
-    .scroll-wrap {
-        height: 300px ;
-        position: relative;
-        overflow: hidden;
-
-        h2 {
-            font-size: 4rem;
-            text-transform: uppercase;
-            position: absolute;
-            top: 2rem;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-        h3 {
-            font-size: 3rem;
-            position: absolute;
-            top: 7rem;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-        h4 {
-            font-size: 5rem;
-            position: absolute;
-            top: 12rem;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
+    .hidden {
+        opacity: 0;
+        transition: all 1s;
+        filter: blur(5px);
+        transform: translateX(-30%);
     }
+    .showing {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateX(0);
+    }
+
 }
 
 //INDEX
@@ -57,7 +42,7 @@ body{
         margin-bottom: 0;
     }
     span {
-        color:orange;
+        color: orange;
     }
     button {
         border: 2px solid white;
@@ -152,7 +137,7 @@ body{
 // GUEST INDEX {
     #guest_index {
         h1 {
-            color: orange;
+            color: #007194;
         }
         .img-wrap{
             height: 155px ;
@@ -162,12 +147,26 @@ body{
             height: 140px;
         }
         .list-group-item {
-            color: orange;
+            color: #BB23E0;
         }
         .list-group {
             height: 150px;
             overflow-y: auto;
         }
+    }
+    //GUest JUMBO
+    #jumbo {
+        // background-image: url('https://blog.uniecampus.it/wp-content/uploads/2021/07/shutterstock_1449924503.png');
+        // background-size: cover;
+        background: linear-gradient(100deg, #007194,#BB23E0 );
+        height: 650px;
+        overflow: hidden;
+
+        h1 {
+            color: white;
+            font-size: 4rem;
+        }
+
     }
 
 
