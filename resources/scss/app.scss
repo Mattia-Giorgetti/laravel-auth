@@ -3,7 +3,17 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
-
+.hidden {
+    opacity: 0;
+    transition: all 1s;
+    filter: blur(5px);
+    transform: translateX(-30%);
+}
+.showing {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
 .active_li {
     color: #007194;
     font-weight: bold;
@@ -17,17 +27,7 @@ body {
         text-decoration: none;
         font-size: 3rem;
     }
-    .hidden {
-        opacity: 0;
-        transition: all 1s;
-        filter: blur(5px);
-        transform: translateX(-30%);
-    }
-    .showing {
-        opacity: 1;
-        filter: blur(0);
-        transform: translateX(0);
-    }
+
 
 }
 
@@ -159,7 +159,7 @@ body {
         // background-image: url('https://blog.uniecampus.it/wp-content/uploads/2021/07/shutterstock_1449924503.png');
         // background-size: cover;
         background: linear-gradient(100deg, #007194,#BB23E0 );
-        height: 650px;
+        height: 100vh;
         overflow: hidden;
 
         h1 {

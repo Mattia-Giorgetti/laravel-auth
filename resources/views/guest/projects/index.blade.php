@@ -3,10 +3,10 @@
     <section id="guest_index">
         <div class="container py-4">
             <h1 class="text-center py-5">These Are My Current Projects</h1>
-            <div class="row justify-content-between">
+            <div class="row justify-content-between mt-4">
                 @foreach ($projects as $project)
                     <div class="col-4 mb-5">
-                        <div class="card" style="width: 18rem;">
+                        <div class="card hidden " style="width: 18rem;">
                             <div class="img-wrap">
                                 <img src="{{ asset('storage/' . $project->cover_image) }}" class="card-img-top"
                                     alt="{{ $project->title }}">

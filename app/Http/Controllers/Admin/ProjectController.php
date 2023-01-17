@@ -22,10 +22,10 @@ class ProjectController extends Controller
     public function index()
     {
         if (Auth::user()->isadmin()) {
-            $projects = Project::all();
+            $projects = Project::paginate(3);
         } else {
             $userID = Auth::id();
-            $projects = Project::where('user_id', $userID)->get();
+            $projects = Project::where('user_id', $userID)->paginate(3);
         }
 
         return view('admin.projects.index', compact('projects'));
